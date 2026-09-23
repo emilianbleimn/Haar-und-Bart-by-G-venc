@@ -6,4 +6,4 @@ Konzept-Website (Onepager) für den Herrenfriseur **Haar & Bart by Güvenc** im 
 
 Reines HTML/CSS – keine Build-Schritte. `index.html` einfach im Browser öffnen.
 
-> Preise und Telefonnummer sind noch Platzhalter und müssen vor Veröffentlichung ersetzt werden.
+> Preise sind noch Platzhalter und müssen vor Veröffentlichung ersetzt werden.
