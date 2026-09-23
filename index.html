@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Haar &amp; Bart by Güvenc – Herrenfriseur in Erbach</title>
 <meta name="description" content="Haar & Bart by Güvenc – Herrenfriseur in Erbach, Jahnstraße 30. Haarschnitte, Fades und Bartpflege, mit und ohne Termin.">
+<link rel="icon" type="image/png" href="assets/img/logo.png">
 <link rel="preload" href="assets/fonts/playfair.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/manrope.woff2" as="font" type="font/woff2" crossorigin>
 <style>
@@ -46,10 +47,11 @@
   .topbar .wrap{display:flex;justify-content:space-between;gap:16px;padding:8px 0}
   .topbar a{text-decoration:none;color:#e9e4dc}
   header{background:var(--bg);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
-  .nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
-  .logo{text-decoration:none;line-height:1.1}
-  .logo strong{display:block;font-family:"Playfair Display",Georgia,serif;font-size:23px;font-weight:600}
-  .logo span{font-size:10.5px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--muted)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:100px;gap:24px}
+  .logo{display:block;text-decoration:none}
+  .logo img{height:82px;width:auto}
+  @media (max-width:880px){.logo img{height:68px}}
+  .footer-logo{height:72px;width:auto;margin-bottom:6px}
   .nav ul{display:flex;gap:32px;list-style:none}
   .nav ul a{text-decoration:none;font-size:14px;font-weight:500;color:var(--ink-soft)}
   .nav ul a:hover{color:var(--ink)}
@@ -146,7 +148,7 @@
   @media (max-width:880px){.contact-grid{grid-template-columns:1fr;gap:40px}.contact-img img{aspect-ratio:3/2}}
 
   .site-footer{border-top:1px solid var(--line);padding:32px 0;font-size:13px;color:var(--muted)}
-  .site-footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+  .site-footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:12px}
   .site-footer a{text-decoration:none}
 </style>
 </head>
@@ -163,8 +165,7 @@
 <header>
   <div class="wrap nav">
     <a href="#" class="logo">
-      <strong>Haar &amp; Bart</strong>
-      <span>by Güvenc</span>
+      <img src="assets/img/logo.png" alt="Haar &amp; Bart by Güvenc" width="340" height="317">
     </a>
     <ul>
       <li><a href="#leistungen">Leistungen</a></li>
@@ -317,7 +318,7 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <span>© 2026 Haar &amp; Bart by Güvenc</span>
+    <span><img class="footer-logo" src="assets/img/logo.png" alt="Haar &amp; Bart by Güvenc" loading="lazy">© 2026 Haar &amp; Bart by Güvenc</span>
     <span>Website-Vorschau · Preise sind Platzhalter</span>
     <span><a href="#">Impressum</a> · <a href="#">Datenschutz</a></span>
   </div>
