@@ -4,482 +4,322 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Haar &amp; Bart by Güvenc – Herrenfriseur</title>
-<meta name="description" content="Haar & Bart by Güvenc – Ihr Herrenfriseur mit & ohne Termin. Fades, Klassiker und Bartpflege. 4,7 Sterne aus 119 Rezensionen.">
+<meta name="description" content="Haar & Bart by Güvenc – Herrenfriseur. Haarschnitte, Fades und Bartpflege, mit und ohne Termin.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kaushan+Script&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --paper:#f1eeea;
-    --paper-2:#e8e3dc;
-    --ink:#1d1c1b;
-    --ink-soft:#4a4744;
-    --muted:#7a746d;
-    --orange:#ef8a2b;
-    --orange-soft:#f6b670;
-    --red:#c7332b;
-    --line:rgba(29,28,27,.12);
+    --bg:#f4f1ec;
+    --bg-alt:#ebe6de;
+    --ink:#1c1b1a;
+    --ink-soft:#55504a;
+    --muted:#8a837a;
+    --accent:#b8692a;
+    --line:#d9d2c7;
+    --dark:#171615;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth;overflow-x:clip}
+  html{scroll-behavior:smooth}
   body{
-    background:var(--paper);
-    color:var(--ink);
-    font-family:Inter,system-ui,sans-serif;
-    font-size:17px;line-height:1.6;
-    overflow-x:clip;
+    background:var(--bg);color:var(--ink);
+    font-family:Archivo,"Helvetica Neue",Arial,sans-serif;
+    font-size:16px;line-height:1.65;
   }
   img{display:block;max-width:100%}
   a{color:inherit}
-  .wrap{width:min(1160px,100% - 32px);margin-inline:auto}
+  .wrap{width:min(1140px,100% - 40px);margin-inline:auto}
 
-  /* ---------- brush helpers ---------- */
-  .brush{
-    -webkit-mask:url(assets/brush-mask.svg) center/100% 100% no-repeat;
-            mask:url(assets/brush-mask.svg) center/100% 100% no-repeat;
-  }
-  .splash{position:relative;isolation:isolate}
-  .splash::before{
-    content:"";position:absolute;inset:-12% -10%;z-index:-1;
-    background:url(assets/splash.svg) center/contain no-repeat;
-  }
-  .script{font-family:"Kaushan Script",cursive;font-weight:400}
-  .display{font-family:"Bebas Neue",Impact,sans-serif;font-weight:400;letter-spacing:.02em;line-height:.95}
-  .stroke{
-    position:relative;display:inline-block;z-index:0;
-  }
-  .stroke::after{
-    content:"";position:absolute;left:-4%;right:-4%;bottom:.08em;height:.38em;z-index:-1;
-    background:var(--orange);opacity:.85;
-    border-radius:40% 60% 45% 55%/60% 40% 60% 40%;
-    transform:rotate(-1.5deg);
+  h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;line-height:1.05;letter-spacing:-.005em}
+  .label{
+    font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);
   }
 
-  /* ---------- header ---------- */
-  header{
-    position:sticky;top:0;z-index:20;
-    background:color-mix(in srgb,var(--paper) 88%,transparent);
-    backdrop-filter:blur(8px);
-    border-bottom:1px solid var(--line);
-  }
-  .nav{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
-  .logo{display:flex;flex-direction:column;line-height:1;text-decoration:none}
-  .logo small{font-family:"Bebas Neue";font-size:15px;letter-spacing:.18em;color:var(--ink-soft)}
-  .logo span{font-family:"Kaushan Script";font-size:26px}
-  .logo span b{color:var(--red);font-weight:400;font-size:.7em;margin:0 2px}
-  .nav ul{display:flex;gap:28px;list-style:none}
-  .nav ul a{text-decoration:none;font-weight:500;font-size:15px;color:var(--ink-soft)}
+  /* header */
+  .topbar{background:var(--dark);color:#bdb6ac;font-size:13px}
+  .topbar .wrap{display:flex;justify-content:space-between;gap:16px;padding:8px 0}
+  .topbar a{text-decoration:none;color:#e9e4dc}
+  header{background:var(--bg);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
+  .logo{text-decoration:none;line-height:1.1}
+  .logo strong{display:block;font-family:"Cormorant Garamond",Georgia,serif;font-size:26px;font-weight:600}
+  .logo span{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+  .nav ul{display:flex;gap:32px;list-style:none}
+  .nav ul a{text-decoration:none;font-size:14px;font-weight:500;color:var(--ink-soft)}
   .nav ul a:hover{color:var(--ink)}
   .btn{
-    display:inline-flex;align-items:center;gap:10px;
-    padding:13px 24px;border-radius:999px;border:2px solid var(--ink);
-    font-weight:600;font-size:15px;text-decoration:none;cursor:pointer;
-    transition:transform .15s ease, background .15s ease, color .15s ease;
+    display:inline-block;padding:14px 26px;border:1px solid var(--ink);
+    font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;
+    transition:background .2s,color .2s;
   }
-  .btn:hover{transform:translateY(-2px)}
-  .btn-dark{background:var(--ink);color:var(--paper)}
-  .btn-dark:hover{background:var(--orange);border-color:var(--orange);color:var(--ink)}
-  .btn-ghost{background:transparent}
-  .btn-ghost:hover{background:var(--ink);color:var(--paper)}
-  .nav .btn{padding:10px 18px}
-  @media (max-width:860px){ .nav ul{display:none} }
+  .btn-solid{background:var(--ink);color:var(--bg)}
+  .btn-solid:hover{background:var(--accent);border-color:var(--accent)}
+  .btn-line:hover{background:var(--ink);color:var(--bg)}
+  .nav .btn{padding:11px 20px}
+  @media (max-width:880px){.nav ul{display:none}.topbar .hide-sm{display:none}}
 
-  /* ---------- hero ---------- */
-  .hero{padding:56px 0 40px}
-  .hero-grid{display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:40px}
-  .eyebrow{
-    display:inline-flex;align-items:center;gap:10px;
-    font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);
-  }
-  .eyebrow::before{content:"";width:28px;height:2px;background:var(--orange)}
-  .hero h1{font-size:clamp(64px,10vw,128px);margin:18px 0 8px}
-  .hero h1 .script{display:block;font-size:.42em;color:var(--orange);margin-top:8px;letter-spacing:0}
-  .hero p.lead{font-size:19px;color:var(--ink-soft);max-width:30ch;margin:18px 0 30px}
-  .hero-cta{display:flex;flex-wrap:wrap;gap:14px}
-  .rating{
-    display:flex;align-items:center;gap:14px;margin-top:36px;
-  }
-  .rating .num{font-family:"Bebas Neue";font-size:52px;line-height:1}
-  .stars{color:var(--orange);letter-spacing:2px;font-size:18px}
-  .rating small{display:block;color:var(--muted);font-size:14px}
-  .hero-art{position:relative}
-  .hero-art img{width:100%;height:auto;mix-blend-mode:multiply;
-    -webkit-mask:radial-gradient(closest-side,#000 72%,transparent 100%);
-            mask:radial-gradient(closest-side,#000 72%,transparent 100%)}
-  .hero-art::before{inset:-6% -8%}
-  .badge{
-    position:absolute;right:2%;bottom:6%;
-    width:128px;height:128px;border-radius:50%;
-    background:var(--ink);color:var(--paper);
-    display:grid;place-items:center;text-align:center;
-    transform:rotate(-10deg);
-    box-shadow:0 12px 30px rgba(0,0,0,.18);
-  }
-  .badge span{font-family:"Bebas Neue";font-size:22px;line-height:1.05;letter-spacing:.04em}
-  .badge em{font-family:"Kaushan Script";font-style:normal;color:var(--orange);font-size:17px;display:block}
-  @media (max-width:860px){
-    .hero-grid{grid-template-columns:1fr}
-    .hero-art{order:-1;max-width:520px;margin-inline:auto}
-    .badge{width:104px;height:104px}
-    .badge span{font-size:18px}
+  /* hero */
+  .hero{padding:72px 0 64px}
+  .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .hero h1{font-size:clamp(48px,7vw,86px);margin:18px 0 24px}
+  .hero h1 em{font-style:italic;font-weight:500;color:var(--accent)}
+  .hero p{color:var(--ink-soft);font-size:18px;max-width:36ch;margin-bottom:34px}
+  .actions{display:flex;flex-wrap:wrap;gap:12px}
+  .hero-img img{width:100%;height:auto;mix-blend-mode:multiply}
+  @media (max-width:880px){
+    .hero{padding:40px 0 48px}
+    .hero-grid{grid-template-columns:1fr;gap:28px}
+    .hero-img{max-width:480px}
   }
 
-  /* ---------- marquee ---------- */
-  .ribbon{background:var(--ink);color:var(--paper);overflow:hidden;transform:rotate(-1.2deg);margin:30px -10px}
-  .ribbon-track{display:flex;gap:40px;padding:14px 0;white-space:nowrap;animation:scroll 32s linear infinite;width:max-content}
-  .ribbon-track span{font-family:"Bebas Neue";font-size:28px;letter-spacing:.08em;display:flex;align-items:center;gap:40px}
-  .ribbon-track span::after{content:"✂";color:var(--orange);font-size:22px}
-  @keyframes scroll{to{transform:translateX(-50%)}}
-  @media (prefers-reduced-motion:reduce){.ribbon-track{animation:none}}
-
-  /* ---------- sections ---------- */
-  section{padding:96px 0}
-  .sec-head{max-width:640px;margin-bottom:52px}
-  .sec-head h2{font-size:clamp(48px,6vw,78px);margin-top:12px}
-  .sec-head p{color:var(--ink-soft);margin-top:14px}
-
-  /* services */
-  .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
-  .service{
-    background:#fff;border-radius:18px;padding:30px 28px 26px;position:relative;overflow:hidden;
-    border:1px solid var(--line);
-    transition:transform .2s ease, box-shadow .2s ease;
+  .facts{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .facts .wrap{display:grid;grid-template-columns:repeat(3,1fr)}
+  .facts div{padding:26px 24px;border-left:1px solid var(--line)}
+  .facts div:first-child{border-left:0;padding-left:0}
+  .facts b{display:block;font-family:"Cormorant Garamond",Georgia,serif;font-size:30px;font-weight:600;line-height:1.1}
+  .facts small{color:var(--muted);font-size:14px}
+  @media (max-width:700px){
+    .facts .wrap{grid-template-columns:1fr}
+    .facts div{border-left:0;border-top:1px solid var(--line);padding:18px 0}
+    .facts div:first-child{border-top:0}
   }
-  .service:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,0,0,.08)}
-  .service::after{
-    content:"";position:absolute;right:-60px;top:-60px;width:170px;height:170px;
-    background:url(assets/splash.svg) center/contain no-repeat;opacity:.55;
-  }
-  .service .ico{font-size:30px;margin-bottom:18px;position:relative;z-index:1}
-  .service h3{font-family:"Bebas Neue";font-weight:400;font-size:32px;letter-spacing:.03em;line-height:1}
-  .service p{color:var(--ink-soft);font-size:15px;margin:10px 0 22px}
-  .price{display:flex;align-items:baseline;justify-content:space-between;border-top:1px dashed var(--line);padding-top:16px}
-  .price b{font-family:"Bebas Neue";font-weight:400;font-size:34px}
-  .price small{color:var(--muted);font-size:13px}
-  .note{color:var(--muted);font-size:13px;margin-top:22px}
 
-  /* about */
-  .about{background:var(--paper-2)}
-  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
-  .about-img img{width:100%;aspect-ratio:4/3.3;object-fit:cover}
-  .about h2{font-size:clamp(48px,6vw,78px);margin:12px 0 22px}
-  .about p{color:var(--ink-soft);margin-bottom:16px}
-  .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
-  .facts div{border-left:3px solid var(--orange);padding-left:14px}
-  .facts b{font-family:"Bebas Neue";font-weight:400;font-size:40px;line-height:1;display:block}
-  .facts small{color:var(--muted);font-size:13px}
-  @media (max-width:860px){.about-grid{grid-template-columns:1fr;gap:40px}}
+  /* sections */
+  section{padding:104px 0}
+  .head{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:end;margin-bottom:56px}
+  .head h2{font-size:clamp(38px,5vw,58px);margin-top:12px}
+  .head p{color:var(--ink-soft);max-width:44ch}
+  @media (max-width:880px){.head{grid-template-columns:1fr;gap:16px;margin-bottom:40px} section{padding:72px 0}}
 
-  /* gallery */
-  .gallery{display:grid;grid-template-columns:repeat(12,1fr);gap:22px}
-  .gallery figure{position:relative}
-  .gallery img{width:100%;height:100%;object-fit:cover}
-  .g1{grid-column:span 5;aspect-ratio:4/5}
-  .g2{grid-column:span 7;aspect-ratio:1/1}
-  .g3{grid-column:span 7;aspect-ratio:2/1}
-  .g4{grid-column:span 5;aspect-ratio:4/5}
-  .gallery figcaption{
-    position:absolute;left:8%;bottom:9%;
-    font-family:"Kaushan Script";font-size:22px;color:#fff;
-    text-shadow:0 2px 12px rgba(0,0,0,.55);
-  }
-  @media (max-width:760px){
-    .gallery{grid-template-columns:1fr}
-    .g1,.g2,.g3,.g4{grid-column:auto;aspect-ratio:4/3.6}
-  }
+  /* price list */
+  .menu{display:grid;grid-template-columns:1fr 1fr;gap:0 72px}
+  .menu-group h3{font-size:28px;padding-bottom:12px;border-bottom:1px solid var(--ink);margin-bottom:8px}
+  .item{display:flex;align-items:baseline;gap:12px;padding:16px 0;border-bottom:1px solid var(--line)}
+  .item div{flex:1}
+  .item strong{font-weight:600;font-size:16px}
+  .item p{color:var(--muted);font-size:14px;margin-top:2px}
+  .item span{font-family:"Cormorant Garamond",Georgia,serif;font-size:24px;font-weight:600;white-space:nowrap}
+  .fine{color:var(--muted);font-size:13px;margin-top:28px}
+  @media (max-width:880px){.menu{grid-template-columns:1fr;gap:40px}}
+
+  /* salon */
+  .salon{background:var(--bg-alt)}
+  .salon-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:64px;align-items:center}
+  .salon-grid img{width:100%;aspect-ratio:3/2;object-fit:cover}
+  .salon h2{font-size:clamp(38px,5vw,58px);margin:12px 0 24px}
+  .salon p{color:var(--ink-soft);margin-bottom:16px}
+  @media (max-width:880px){.salon-grid{grid-template-columns:1fr;gap:36px}}
+
+  /* work */
+  .work{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .work figure{margin:0}
+  .work img{width:100%;aspect-ratio:4/5;object-fit:cover}
+  .work figcaption{font-size:14px;color:var(--muted);margin-top:10px}
+  @media (max-width:760px){.work{grid-template-columns:1fr 1fr}.work figure:last-child{grid-column:1/-1}.work figure:last-child img{aspect-ratio:3/2}}
 
   /* reviews */
-  .reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
-  .review{background:#fff;border-radius:18px;padding:30px;border:1px solid var(--line);position:relative}
-  .review::before{
-    content:"“";position:absolute;top:-6px;right:22px;
-    font-family:"Kaushan Script";font-size:110px;line-height:1;color:var(--orange);opacity:.35;
-  }
-  .review p{font-size:16px;margin:14px 0 20px}
-  .review small{color:var(--muted);font-size:13px}
-  .review-sum{
-    display:flex;flex-wrap:wrap;align-items:center;gap:26px;margin-bottom:40px;
-  }
-  .review-sum .big{font-family:"Bebas Neue";font-size:96px;line-height:.9}
-  .bars{flex:1;min-width:220px;max-width:360px;display:grid;gap:6px}
-  .bars div{display:grid;grid-template-columns:14px 1fr;gap:10px;align-items:center;font-size:13px;color:var(--muted)}
-  .bars i{height:8px;border-radius:9px;background:var(--line);position:relative;overflow:hidden}
-  .bars i::after{content:"";position:absolute;inset:0;width:var(--w);background:var(--orange);border-radius:9px}
+  .reviews-sec{background:var(--dark);color:#ece7df}
+  .reviews-sec .head p{color:#a9a197}
+  .score{font-family:"Cormorant Garamond",Georgia,serif;font-size:64px;font-weight:600;line-height:1}
+  .score small{font-family:Archivo,sans-serif;font-size:15px;color:#a9a197;font-weight:400;margin-left:10px}
+  .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:48px}
+  blockquote{border-top:1px solid #3a3734;padding-top:24px}
+  blockquote p{font-family:"Cormorant Garamond",Georgia,serif;font-size:23px;line-height:1.35;font-weight:500}
+  blockquote footer{font-size:13px;color:#8f877d;margin-top:18px;letter-spacing:.04em}
+  @media (max-width:880px){.quotes{grid-template-columns:1fr;gap:32px}}
 
-  /* visit */
-  .visit{background:var(--ink);color:var(--paper);position:relative;overflow:hidden}
-  .visit::before{
-    content:"";position:absolute;width:720px;height:720px;right:-220px;top:-200px;
-    background:url(assets/splash.svg) center/contain no-repeat;opacity:.5;
-  }
-  .visit-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center;position:relative}
-  .visit h2{font-size:clamp(52px,7vw,96px);margin:12px 0 22px}
-  .visit .eyebrow{color:var(--orange-soft)}
-  .visit p{color:#c9c3bb}
-  .hours{margin:30px 0;border-top:1px solid rgba(255,255,255,.14)}
-  .hours div{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.14)}
-  .hours .today{color:var(--orange-soft);font-weight:600}
-  .visit .btn{border-color:var(--paper)}
-  .visit .btn-dark{background:var(--orange);border-color:var(--orange);color:var(--ink)}
-  .visit .btn-dark:hover{background:var(--paper);border-color:var(--paper)}
-  .visit .btn-ghost{color:var(--paper)}
-  .visit .btn-ghost:hover{background:var(--paper);color:var(--ink)}
-  .visit-img img{width:100%;aspect-ratio:1/1;object-fit:cover}
-  .walkin{
-    display:inline-block;margin-top:6px;font-family:"Kaushan Script";font-size:26px;color:var(--orange-soft);
-  }
-  @media (max-width:860px){.visit-grid{grid-template-columns:1fr}}
+  /* contact */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+  .contact h2{font-size:clamp(38px,5vw,58px);margin:12px 0 20px}
+  .contact p{color:var(--ink-soft)}
+  table{width:100%;border-collapse:collapse;margin:32px 0}
+  td{padding:13px 0;border-bottom:1px solid var(--line);font-size:15px}
+  td:last-child{text-align:right;color:var(--ink-soft)}
+  tr.today td{font-weight:600;color:var(--ink)}
+  .contact-img img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:6% 50%}
+  @media (max-width:880px){.contact-grid{grid-template-columns:1fr;gap:40px}.contact-img img{aspect-ratio:3/2}}
 
-  footer{padding:34px 0;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
-  footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center}
-
-  /* reveal */
-  .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease, transform .8s ease}
-  .reveal.in{opacity:1;transform:none}
-  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
-
-  .preview-note{
-    background:var(--orange);color:var(--ink);text-align:center;font-size:13px;font-weight:600;padding:7px 16px;
-  }
+  .site-footer{border-top:1px solid var(--line);padding:32px 0;font-size:13px;color:var(--muted)}
+  .site-footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+  .site-footer a{text-decoration:none}
 </style>
 </head>
 <body>
 
-<div class="preview-note">Vorschau · Website-Konzept für Haar &amp; Bart by Güvenc</div>
+<div class="topbar">
+  <div class="wrap">
+    <span>Mit &amp; ohne Termin</span>
+    <span class="hide-sm">Mo–Fr 09:00–18:30 · Sa 09:00–16:00</span>
+    <a href="tel:+490000000000">Tel. 0000 000000</a>
+  </div>
+</div>
 
 <header>
   <div class="wrap nav">
-    <a href="#top" class="logo" aria-label="Haar & Bart by Güvenc">
-      <small>Haar &amp; Bart</small>
-      <span>Gü<b>by</b>venc</span>
+    <a href="#" class="logo">
+      <strong>Haar &amp; Bart</strong>
+      <span>by Güvenc</span>
     </a>
     <ul>
       <li><a href="#leistungen">Leistungen</a></li>
       <li><a href="#salon">Salon</a></li>
-      <li><a href="#galerie">Galerie</a></li>
-      <li><a href="#stimmen">Rezensionen</a></li>
-      <li><a href="#besuch">Kontakt</a></li>
+      <li><a href="#arbeiten">Arbeiten</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
     </ul>
-    <a href="#besuch" class="btn btn-dark">Termin</a>
+    <a href="tel:+490000000000" class="btn btn-solid">Anrufen</a>
   </div>
 </header>
 
-<main id="top">
+<main>
 
-  <!-- HERO -->
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
-        <span class="eyebrow">Herrenfriseur · Barber</span>
-        <h1 class="display">Haar &amp; Bart
-          <span class="script">by Güvenc</span>
-        </h1>
-        <p class="lead">Präzise Fades, zeitlose Klassiker und gepflegte Bärte – mit Handwerk, Ruhe und einem Auge fürs Detail.</p>
-        <div class="hero-cta">
-          <a href="#besuch" class="btn btn-dark">Termin vereinbaren →</a>
-          <a href="#galerie" class="btn btn-ghost">Unsere Arbeiten</a>
-        </div>
-        <div class="rating">
-          <span class="num">4,7</span>
-          <div>
-            <div class="stars">★★★★★</div>
-            <small>119 Google-Rezensionen</small>
-          </div>
+        <p class="label">Herrenfriseur</p>
+        <h1>Haar &amp; Bart <em>by Güvenc</em></h1>
+        <p>Haarschnitte, Fades und Bartpflege – sorgfältig gemacht, mit Zeit für die Beratung. Termin vereinbaren oder einfach vorbeikommen.</p>
+        <div class="actions">
+          <a href="tel:+490000000000" class="btn btn-solid">Termin vereinbaren</a>
+          <a href="#leistungen" class="btn btn-line">Preise ansehen</a>
         </div>
       </div>
-      <div class="hero-art splash">
-        <img src="assets/img/hero-art.webp" alt="Güvenc beim Konturenschnitt eines Kunden – Aquarell-Illustration" width="906" height="821">
-        <div class="badge"><span><em>mit &amp; ohne</em>Termin</span></div>
+      <div class="hero-img">
+        <img src="assets/img/hero-art.webp" alt="Güvenc bei der Arbeit" width="906" height="821">
       </div>
     </div>
   </section>
 
-  <div class="ribbon" aria-hidden="true">
-    <div class="ribbon-track">
-      <span>Skin Fade</span><span>Bartpflege</span><span>Slick Back</span><span>Konturen</span><span>Kinderhaarschnitt</span><span>Heißtuch-Rasur</span>
-      <span>Skin Fade</span><span>Bartpflege</span><span>Slick Back</span><span>Konturen</span><span>Kinderhaarschnitt</span><span>Heißtuch-Rasur</span>
+  <div class="facts">
+    <div class="wrap">
+      <div><b>4,7 von 5</b><small>aus 119 Google-Rezensionen</small></div>
+      <div><b>Mit &amp; ohne Termin</b><small>Laufkundschaft willkommen</small></div>
+      <div><b>ab 15 €</b><small>Herrenhaarschnitt</small></div>
     </div>
   </div>
 
-  <!-- SERVICES -->
   <section id="leistungen">
     <div class="wrap">
-      <div class="sec-head reveal">
-        <span class="eyebrow">Leistungen</span>
-        <h2 class="display">Schnitt. <span class="stroke">Bart.</span> Stil.</h2>
-        <p>Vom sauberen Übergang bis zur scharfen Kontur – jeder Schnitt wird auf Kopfform, Haartyp und Wunsch abgestimmt.</p>
-      </div>
-      <div class="services">
-        <article class="service reveal">
-          <div class="ico">✂️</div>
-          <h3>Herrenhaarschnitt</h3>
-          <p>Beratung, Waschen, Schnitt und Styling – klassisch oder modern.</p>
-          <div class="price"><small>ab</small><b>15 €</b></div>
-        </article>
-        <article class="service reveal">
-          <div class="ico">💈</div>
-          <h3>Fade &amp; Skin Fade</h3>
-          <p>Weiche Übergänge bis auf die Haut, sauber ausrasierte Konturen.</p>
-          <div class="price"><small>ab</small><b>18 €</b></div>
-        </article>
-        <article class="service reveal">
-          <div class="ico">🧔</div>
-          <h3>Bart trimmen</h3>
-          <p>Form, Länge und Konturen – mit Klinge nachgezogen.</p>
-          <div class="price"><small>ab</small><b>10 €</b></div>
-        </article>
-        <article class="service reveal">
-          <div class="ico">🔥</div>
-          <h3>Haar &amp; Bart</h3>
-          <p>Das Komplettpaket inklusive Heißtuch und Pflegeprodukten.</p>
-          <div class="price"><small>ab</small><b>25 €</b></div>
-        </article>
-      </div>
-      <p class="note">* Preise sind Beispielwerte für die Vorschau und werden vor Veröffentlichung angepasst.</p>
-    </div>
-  </section>
-
-  <!-- ABOUT / SALON -->
-  <section id="salon" class="about">
-    <div class="wrap about-grid">
-      <div class="about-img splash reveal">
-        <img class="brush" src="assets/img/salon-innen.webp" alt="Innenansicht des Salons mit Barber-Stühlen und Waben-Deckenlicht" width="1380" height="686" loading="lazy">
-      </div>
-      <div class="reveal">
-        <span class="eyebrow">Der Salon</span>
-        <h2 class="display">Ein Ort zum <span class="script" style="color:var(--orange);font-size:.8em">Wohlfühlen</span></h2>
-        <p>Waben-Licht an der Decke, schwarze Schieferwand, bequeme Barber-Stühle: Bei Haar &amp; Bart by Güvenc nimmst du dir eine Auszeit – und gehst mit einem Schnitt raus, der sitzt.</p>
-        <p>Unser Team geht auf jeden Wunsch ein. Ob Stammkunde seit Tag eins oder zum ersten Mal da – du wirst dich sofort gut aufgehoben fühlen.</p>
-        <div class="facts">
-          <div><b>4,7★</b><small>Bewertung</small></div>
-          <div><b>119</b><small>Rezensionen</small></div>
-          <div><b>4</b><small>Barber-Plätze</small></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- GALLERY -->
-  <section id="galerie">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <span class="eyebrow">Galerie</span>
-        <h2 class="display">Frisch aus dem <span class="stroke">Stuhl</span></h2>
-        <p>Ein paar Arbeiten aus dem Salon – jede davon ein Unikat.</p>
-      </div>
-      <div class="gallery">
-        <figure class="g1 brush reveal"><img src="assets/img/cut-fade.webp" alt="Crop mit High Skin Fade" loading="lazy"><figcaption>High Skin Fade</figcaption></figure>
-        <figure class="g2 brush reveal"><img src="assets/img/cut-slickback.webp" alt="Slick Back mit Taper Fade aus drei Perspektiven" loading="lazy"><figcaption>Slick Back &amp; Taper</figcaption></figure>
-        <figure class="g3 brush reveal"><img src="assets/img/salon-innen.webp" alt="Barber-Plätze im Salon" loading="lazy" style="object-position:70% 50%"><figcaption>Unsere Plätze</figcaption></figure>
-        <figure class="g4 brush reveal"><img src="assets/img/salon-aussen.webp" alt="Außenansicht mit Schaufenster 'Mit & ohne Termin'" loading="lazy" style="object-position:4% 50%"><figcaption>Mit &amp; ohne Termin</figcaption></figure>
-      </div>
-    </div>
-  </section>
-
-  <!-- REVIEWS -->
-  <section id="stimmen" class="about">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <span class="eyebrow">Rezensionen</span>
-        <h2 class="display">Das sagen <span class="stroke">unsere Kunden</span></h2>
-      </div>
-      <div class="review-sum reveal">
-        <span class="big">4,7</span>
+      <div class="head">
         <div>
-          <div class="stars" style="font-size:24px">★★★★★</div>
-          <small style="color:var(--muted)">aus 119 Google-Rezensionen</small>
+          <p class="label">Leistungen &amp; Preise</p>
+          <h2>Preisliste</h2>
         </div>
-        <div class="bars" aria-hidden="true">
-          <div>5<i style="--w:86%"></i></div>
-          <div>4<i style="--w:8%"></i></div>
-          <div>3<i style="--w:3%"></i></div>
-          <div>2<i style="--w:1%"></i></div>
-          <div>1<i style="--w:2%"></i></div>
+        <p>Jeder Schnitt beginnt mit einer kurzen Beratung. Waschen und Styling sind bei allen Haarschnitten inklusive.</p>
+      </div>
+      <div class="menu">
+        <div class="menu-group">
+          <h3>Haare</h3>
+          <div class="item"><div><strong>Herrenhaarschnitt</strong><p>Waschen, Schneiden, Styling</p></div><span>15 €</span></div>
+          <div class="item"><div><strong>Fade / Skin Fade</strong><p>Übergang bis auf die Haut, Konturen</p></div><span>18 €</span></div>
+          <div class="item"><div><strong>Maschinenschnitt</strong><p>Eine Länge</p></div><span>12 €</span></div>
+          <div class="item"><div><strong>Kinderhaarschnitt</strong><p>Bis 12 Jahre</p></div><span>12 €</span></div>
+        </div>
+        <div class="menu-group">
+          <h3>Bart</h3>
+          <div class="item"><div><strong>Bart trimmen</strong><p>Form und Konturen mit Klinge</p></div><span>10 €</span></div>
+          <div class="item"><div><strong>Nassrasur</strong><p>Mit heißem Tuch</p></div><span>12 €</span></div>
+          <div class="item"><div><strong>Haar &amp; Bart</strong><p>Haarschnitt und Bartpflege</p></div><span>25 €</span></div>
+          <div class="item"><div><strong>Augenbrauen</strong><p>Zupfen oder Fadentechnik</p></div><span>5 €</span></div>
         </div>
       </div>
-      <div class="reviews">
-        <article class="review reveal">
-          <div class="stars">★★★★★</div>
-          <p>„Ich bin seit Tag eins Kunde bei Güvenc und jedes Mal aufs Neue mehr als zufrieden. Hier stimmt einfach alles. Ein super Team, großartige Menschen und Mitarbeiter, bei denen man sich vom ersten Moment an wohlfühlt.“</p>
-          <small>Google-Rezension · vor 8 Monaten</small>
-        </article>
-        <article class="review reveal">
-          <div class="stars">★★★★★</div>
-          <p>„Haarschnitt sitzt perfekt. Auf Wünsche wird immer eingegangen.“</p>
-          <small>Google-Rezension · vor einem Monat</small>
-        </article>
-        <article class="review reveal">
-          <div class="stars">★★★★★</div>
-          <p>„Beste Frisur, bin sehr zufrieden – kann nur weiterempfehlen, lohnt sich Jungs!“</p>
-          <small>Google-Rezension</small>
-        </article>
-        <article class="review reveal">
-          <div class="stars">★★★★★</div>
-          <p>„Ganz nettes Team. Ich fühle mich hier gut aufgehoben. 👍🏻“</p>
-          <small>Google-Rezension</small>
-        </article>
-        <article class="review reveal">
-          <div class="stars">★★★★★</div>
-          <p>„Super Frisör und super Service, immer freundlich.“</p>
-          <small>Google-Rezension</small>
-        </article>
-        <article class="review reveal">
-          <div class="stars">★★★★★</div>
-          <p>„Professionelles Team – darum empfehle ich diesen Salon.“</p>
-          <small>Google-Rezension · vor einem Jahr</small>
-        </article>
+      <p class="fine">Vorschau: Preise sind Beispielwerte und werden vor Veröffentlichung durch die aktuelle Preisliste ersetzt.</p>
+    </div>
+  </section>
+
+  <section id="salon" class="salon">
+    <div class="wrap salon-grid">
+      <img src="assets/img/salon-innen.webp" alt="Innenansicht des Salons" loading="lazy">
+      <div>
+        <p class="label">Der Salon</p>
+        <h2>Vier Plätze, ein eingespieltes Team</h2>
+        <p>Im Salon arbeiten wir an vier Barber-Plätzen – genug, damit auch ohne Termin die Wartezeit kurz bleibt.</p>
+        <p>Viele unserer Kunden kommen seit dem ersten Tag. Das liegt an sauberer Arbeit und daran, dass wir auf Wünsche eingehen.</p>
       </div>
     </div>
   </section>
 
-  <!-- VISIT -->
-  <section id="besuch" class="visit">
-    <div class="wrap visit-grid">
-      <div class="reveal">
-        <span class="eyebrow">Besuch uns</span>
-        <h2 class="display">Komm einfach <span class="stroke" style="color:var(--paper)">vorbei</span></h2>
-        <span class="walkin">Mit &amp; ohne Termin</span>
-        <div class="hours" id="hours">
-          <div data-d="1"><span>Montag</span><span>09:00 – 18:30</span></div>
-          <div data-d="2"><span>Dienstag</span><span>09:00 – 18:30</span></div>
-          <div data-d="3"><span>Mittwoch</span><span>09:00 – 18:30</span></div>
-          <div data-d="4"><span>Donnerstag</span><span>09:00 – 18:30</span></div>
-          <div data-d="5"><span>Freitag</span><span>09:00 – 18:30</span></div>
-          <div data-d="6"><span>Samstag</span><span>09:00 – 16:00</span></div>
-          <div data-d="0"><span>Sonntag</span><span>Geschlossen</span></div>
+  <section id="arbeiten">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <p class="label">Arbeiten</p>
+          <h2>Aus dem Salon</h2>
         </div>
-        <p style="font-size:13px;margin-bottom:26px">* Öffnungszeiten, Adresse &amp; Telefonnummer sind Platzhalter für die Vorschau.</p>
-        <div class="hero-cta">
-          <a href="tel:+490000000000" class="btn btn-dark">📞 Jetzt anrufen</a>
-          <a href="https://www.google.com/maps/search/?api=1&amp;query=Haar+%26+Bart+by+G%C3%BCvenc" target="_blank" rel="noopener" class="btn btn-ghost">📍 Route planen</a>
+        <p>Eine Auswahl aktueller Schnitte. Weitere Bilder auf Instagram.</p>
+      </div>
+      <div class="work">
+        <figure><img src="assets/img/cut-fade.webp" alt="Crop mit High Skin Fade" loading="lazy"><figcaption>Crop mit High Fade</figcaption></figure>
+        <figure><img src="assets/img/cut-slickback.webp" alt="Slick Back mit Taper" loading="lazy" style="object-position:20% 50%"><figcaption>Slick Back mit Taper</figcaption></figure>
+        <figure><img src="assets/img/salon-innen.webp" alt="Barber-Plätze" loading="lazy" style="object-position:62% 50%"><figcaption>Unsere Plätze</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews-sec">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <p class="label">Rezensionen</p>
+          <div class="score" style="margin-top:12px">4,7<small>119 Bewertungen auf Google</small></div>
+        </div>
+        <p>Auszüge aus den Google-Bewertungen unserer Kunden.</p>
+      </div>
+      <div class="quotes">
+        <blockquote>
+          <p>„Ich bin seit Tag eins Kunde bei Güvenc und jedes Mal aufs Neue mehr als zufrieden. Hier stimmt einfach alles.“</p>
+          <footer>Google-Rezension</footer>
+        </blockquote>
+        <blockquote>
+          <p>„Haarschnitt sitzt perfekt. Auf Wünsche wird immer eingegangen.“</p>
+          <footer>Google-Rezension</footer>
+        </blockquote>
+        <blockquote>
+          <p>„Ganz nettes Team. Ich fühle mich hier gut aufgehoben.“</p>
+          <footer>Google-Rezension</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontakt" class="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <p class="label">Kontakt</p>
+        <h2>Besuchen Sie uns</h2>
+        <p>Musterstraße 1<br>00000 Musterstadt<br>Telefon 0000 000000</p>
+        <table id="hours">
+          <tr data-d="1"><td>Montag</td><td>09:00 – 18:30</td></tr>
+          <tr data-d="2"><td>Dienstag</td><td>09:00 – 18:30</td></tr>
+          <tr data-d="3"><td>Mittwoch</td><td>09:00 – 18:30</td></tr>
+          <tr data-d="4"><td>Donnerstag</td><td>09:00 – 18:30</td></tr>
+          <tr data-d="5"><td>Freitag</td><td>09:00 – 18:30</td></tr>
+          <tr data-d="6"><td>Samstag</td><td>09:00 – 16:00</td></tr>
+          <tr data-d="0"><td>Sonntag</td><td>geschlossen</td></tr>
+        </table>
+        <div class="actions">
+          <a href="tel:+490000000000" class="btn btn-solid">Anrufen</a>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=Haar+%26+Bart+by+G%C3%BCvenc" target="_blank" rel="noopener" class="btn btn-line">Route planen</a>
         </div>
       </div>
-      <div class="visit-img reveal">
-        <img class="brush" src="assets/img/salon-aussen.webp" alt="Außenansicht von Haar & Bart by Güvenc" loading="lazy" style="object-position:4% 50%">
+      <div class="contact-img">
+        <img src="assets/img/salon-aussen.webp" alt="Außenansicht des Salons" loading="lazy">
       </div>
     </div>
   </section>
 
 </main>
 
-<footer>
+<footer class="site-footer">
   <div class="wrap">
-    <span><span class="script" style="color:var(--ink);font-size:18px">Haar &amp; Bart by Güvenc</span> · Herrenfriseur</span>
-    <span>© 2026 · Impressum · Datenschutz</span>
+    <span>© 2026 Haar &amp; Bart by Güvenc</span>
+    <span>Website-Vorschau · Adresse, Telefon, Zeiten und Preise sind Platzhalter</span>
+    <span><a href="#">Impressum</a> · <a href="#">Datenschutz</a></span>
   </div>
 </footer>
 
 <script>
-  // Heutigen Tag in den Öffnungszeiten hervorheben
-  const d = new Date().getDay();
-  const row = document.querySelector('#hours [data-d="' + d + '"]');
-  if (row) row.classList.add('today');
-
-  // Sanftes Einblenden beim Scrollen
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  var row = document.querySelector('#hours [data-d="' + new Date().getDay() + '"]');
+  if (row) row.className = 'today';
 </script>
 </body>
 </html>
