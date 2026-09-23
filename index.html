@@ -5,16 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Haar &amp; Bart by Güvenc – Herrenfriseur in Erbach</title>
 <meta name="description" content="Haar & Bart by Güvenc – Herrenfriseur in Erbach, Jahnstraße 30. Haarschnitte, Fades und Bartpflege, mit und ohne Termin.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" href="assets/fonts/playfair.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/manrope.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+  @font-face{font-family:"Playfair Display";src:url(assets/fonts/playfair.woff2) format("woff2");font-weight:400 900;font-style:normal;font-display:swap}
+  @font-face{font-family:"Playfair Display";src:url(assets/fonts/playfair-italic.woff2) format("woff2");font-weight:400 900;font-style:italic;font-display:swap}
+  @font-face{font-family:"Manrope";src:url(assets/fonts/manrope.woff2) format("woff2");font-weight:200 800;font-style:normal;font-display:swap}
+
   :root{
     --bg:#f4f1ec;
     --bg-alt:#ebe6de;
     --ink:#1c1b1a;
-    --ink-soft:#55504a;
-    --muted:#8a837a;
+    --ink-soft:#4b463f;
+    --muted:#7a7369;
     --accent:#b8692a;
     --line:#d9d2c7;
     --dark:#171615;
@@ -23,17 +26,20 @@
   html{scroll-behavior:smooth}
   body{
     background:var(--bg);color:var(--ink);
-    font-family:Archivo,"Helvetica Neue",Arial,sans-serif;
-    font-size:16px;line-height:1.65;
+    font-family:Manrope,"Helvetica Neue",Arial,sans-serif;
+    font-size:16.5px;line-height:1.7;
+    -webkit-font-smoothing:antialiased;
   }
   img{display:block;max-width:100%}
   a{color:inherit}
   .wrap{width:min(1140px,100% - 40px);margin-inline:auto}
 
-  h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;line-height:1.05;letter-spacing:-.005em}
-  .label{
-    font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);
+  h1,h2,h3{font-family:"Playfair Display",Georgia,serif;font-weight:600;line-height:1.12;letter-spacing:-.01em}
+  body .wrap p.label{
+    font-size:12px;font-weight:700;letter-spacing:.16em;line-height:1.4;text-transform:uppercase;color:var(--accent);
+    max-width:none;margin-bottom:0;
   }
+  h1,h2,h3,.facts b,.score{font-variant-numeric:lining-nums}
 
   /* header */
   .topbar{background:var(--dark);color:#bdb6ac;font-size:13px}
@@ -42,14 +48,14 @@
   header{background:var(--bg);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
   .nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
   .logo{text-decoration:none;line-height:1.1}
-  .logo strong{display:block;font-family:"Cormorant Garamond",Georgia,serif;font-size:26px;font-weight:600}
-  .logo span{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+  .logo strong{display:block;font-family:"Playfair Display",Georgia,serif;font-size:23px;font-weight:600}
+  .logo span{font-size:10.5px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--muted)}
   .nav ul{display:flex;gap:32px;list-style:none}
   .nav ul a{text-decoration:none;font-size:14px;font-weight:500;color:var(--ink-soft)}
   .nav ul a:hover{color:var(--ink)}
   .btn{
     display:inline-block;padding:14px 26px;border:1px solid var(--ink);
-    font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;
+    font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;
     transition:background .2s,color .2s;
   }
   .btn-solid{background:var(--ink);color:var(--bg)}
@@ -61,9 +67,9 @@
   /* hero */
   .hero{padding:72px 0 64px}
   .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
-  .hero h1{font-size:clamp(48px,7vw,86px);margin:18px 0 24px}
-  .hero h1 em{font-style:italic;font-weight:500;color:var(--accent)}
-  .hero p{color:var(--ink-soft);font-size:18px;max-width:36ch;margin-bottom:34px}
+  .hero h1{font-size:clamp(44px,6.2vw,76px);margin:18px 0 24px}
+  .hero h1 em{display:block;font-style:italic;font-weight:500;color:var(--accent)}
+  .hero p{color:var(--ink-soft);font-size:18px;line-height:1.7;max-width:36ch;margin-bottom:34px}
   .actions{display:flex;flex-wrap:wrap;gap:12px}
   .hero-img img{width:100%;height:auto;mix-blend-mode:multiply}
   @media (max-width:880px){
@@ -76,7 +82,7 @@
   .facts .wrap{display:grid;grid-template-columns:repeat(3,1fr)}
   .facts div{padding:26px 24px;border-left:1px solid var(--line)}
   .facts div:first-child{border-left:0;padding-left:0}
-  .facts b{display:block;font-family:"Cormorant Garamond",Georgia,serif;font-size:30px;font-weight:600;line-height:1.1}
+  .facts b{display:block;font-family:"Playfair Display",Georgia,serif;font-size:24px;font-weight:600;line-height:1.25;margin-bottom:2px}
   .facts small{color:var(--muted);font-size:14px}
   @media (max-width:700px){
     .facts .wrap{grid-template-columns:1fr}
@@ -87,18 +93,18 @@
   /* sections */
   section{padding:104px 0}
   .head{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:end;margin-bottom:56px}
-  .head h2{font-size:clamp(38px,5vw,58px);margin-top:12px}
+  .head h2{font-size:clamp(34px,4.4vw,50px);margin-top:12px}
   .head p{color:var(--ink-soft);max-width:44ch}
   @media (max-width:880px){.head{grid-template-columns:1fr;gap:16px;margin-bottom:40px} section{padding:72px 0}}
 
   /* price list */
   .menu{display:grid;grid-template-columns:1fr 1fr;gap:0 72px}
-  .menu-group h3{font-size:28px;padding-bottom:12px;border-bottom:1px solid var(--ink);margin-bottom:8px}
+  .menu-group h3{font-size:24px;padding-bottom:12px;border-bottom:1px solid var(--ink);margin-bottom:8px}
   .item{display:flex;align-items:baseline;gap:12px;padding:16px 0;border-bottom:1px solid var(--line)}
   .item div{flex:1}
-  .item strong{font-weight:600;font-size:16px}
+  .item strong{font-weight:600;font-size:16.5px}
   .item p{color:var(--muted);font-size:14px;margin-top:2px}
-  .item span{font-family:"Cormorant Garamond",Georgia,serif;font-size:24px;font-weight:600;white-space:nowrap}
+  .item span{font-size:17px;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
   .fine{color:var(--muted);font-size:13px;margin-top:28px}
   @media (max-width:880px){.menu{grid-template-columns:1fr;gap:40px}}
 
@@ -106,7 +112,7 @@
   .salon{background:var(--bg-alt)}
   .salon-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:64px;align-items:center}
   .salon-grid img{width:100%;aspect-ratio:3/2;object-fit:cover}
-  .salon h2{font-size:clamp(38px,5vw,58px);margin:12px 0 24px}
+  .salon h2{font-size:clamp(34px,4.4vw,50px);margin:12px 0 24px}
   .salon p{color:var(--ink-soft);margin-bottom:16px}
   @media (max-width:880px){.salon-grid{grid-template-columns:1fr;gap:36px}}
 
@@ -120,20 +126,20 @@
   /* reviews */
   .reviews-sec{background:var(--dark);color:#ece7df}
   .reviews-sec .head p{color:#a9a197}
-  .score{font-family:"Cormorant Garamond",Georgia,serif;font-size:64px;font-weight:600;line-height:1}
-  .score small{font-family:Archivo,sans-serif;font-size:15px;color:#a9a197;font-weight:400;margin-left:10px}
+  .score{font-family:"Playfair Display",Georgia,serif;font-size:56px;font-weight:600;line-height:1}
+  .score small{font-family:Manrope,sans-serif;font-size:15px;color:#a9a197;font-weight:400;margin-left:10px}
   .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:48px}
   blockquote{border-top:1px solid #3a3734;padding-top:24px}
-  blockquote p{font-family:"Cormorant Garamond",Georgia,serif;font-size:23px;line-height:1.35;font-weight:500}
+  blockquote p{font-family:"Playfair Display",Georgia,serif;font-style:italic;font-size:20px;line-height:1.5;font-weight:500}
   blockquote footer{font-size:13px;color:#8f877d;margin-top:18px;letter-spacing:.04em}
   @media (max-width:880px){.quotes{grid-template-columns:1fr;gap:32px}}
 
   /* contact */
   .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
-  .contact h2{font-size:clamp(38px,5vw,58px);margin:12px 0 20px}
+  .contact h2{font-size:clamp(34px,4.4vw,50px);margin:12px 0 20px}
   .contact p{color:var(--ink-soft)}
   table{width:100%;border-collapse:collapse;margin:32px 0}
-  td{padding:13px 0;border-bottom:1px solid var(--line);font-size:15px}
+  td{padding:13px 0;border-bottom:1px solid var(--line);font-size:15.5px;font-variant-numeric:tabular-nums}
   td:last-child{text-align:right;color:var(--ink-soft)}
   tr.today td{font-weight:600;color:var(--ink)}
   .contact-img img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:6% 50%}
